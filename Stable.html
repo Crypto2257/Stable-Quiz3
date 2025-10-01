@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stable Quiz</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    h1 { text-align: center; margin-bottom: 30px; }
+    .question { margin-bottom: 15px; }
+    .options { margin-bottom: 10px; }
+    button { margin-top: 20px; display: block; margin-left: auto; margin-right: auto; }
+    #result { text-align: center; font-weight: bold; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Stable Quiz</h1>
+
+  <!-- Question 1 -->
+  <div class="question">
+    <p>1. What is Stable building?</p>
+    <div class="options">
+      <input type="radio" name="q1" value="A"> A blockchain using USDT as gas<br>
+      <input type="radio" name="q1" value="B"> A gaming platform<br>
+      <input type="radio" name="q1" value="C"> A social media app<br>
+    </div>
+  </div>
+
+  <!-- Question 2 -->
+  <div class="question">
+    <p>2. Who is CEO of Stable?</p>
+    <div class="options">
+      <input type="radio" name="q2" value="A"> Sam Kazemian<br>
+      <input type="radio" name="q2" value="B"> Matthew Tabbiner<br>
+      <input type="radio" name="q2" value="C"> Brian Mehler<br>
+    </div>
+  </div>
+
+  <!-- Question 3 -->
+  <div class="question">
+    <p>3. How much did Stable raise in seed funding?</p>
+    <div class="options">
+      <input type="radio" name="q3" value="A"> $28M<br>
+      <input type="radio" name="q3" value="B"> $10M<br>
+      <input type="radio" name="q3" value="C"> $50M<br>
+    </div>
+  </div>
+
+  <!-- Question 4 -->
+  <div class="question">
+    <p>4. What is the gas token used by Stable blockchain?</p>
+    <div class="options">
+      <input type="radio" name="q4" value="A"> ETH<br>
+      <input type="radio" name="q4" value="B"> USDT<br>
+      <input type="radio" name="q4" value="C"> BTC<br>
+    </div>
+  </div>
+
+  <!-- Question 5 -->
+  <div class="question">
+    <p>5. Who is CTO of Stable?</p>
+    <div class="options">
+      <input type="radio" name="q5" value="A"> Sam Kazemian<br>
+      <input type="radio" name="q5" value="B"> Matthew Tabbiner<br>
+      <input type="radio" name="q5" value="C"> Brian Mehler<br>
+    </div>
+  </div>
+
+  <!-- Question 6 -->
+  <div class="question">
+    <p>6. What is the main goal of Stable blockchain?</p>
+    <div class="options">
+      <input type="radio" name="q6" value="A"> Fast, low-cost stablecoin payments<br>
+      <input type="radio" name="q6" value="B"> NFT marketplace<br>
+      <input type="radio" name="q6" value="C"> Decentralized social media<br>
+    </div>
+  </div>
+
+  <!-- Question 7 -->
+  <div class="question">
+    <p>7. Which of these is a backer of Stable?</p>
+    <div class="options">
+      <input type="radio" name="q7" value="A"> Bitfinex<br>
+      <input type="radio" name="q7" value="B"> Coinbase Ventures<br>
+      <input type="radio" name="q7" value="C"> Binance Charity<br>
+    </div>
+  </div>
+
+  <!-- Question 8 -->
+  <div class="question">
+    <p>8. Which role does Brian Mehler hold at Stable?</p>
+    <div class="options">
+      <input type="radio" name="q8" value="A"> CEO<br>
+      <input type="radio" name="q8" value="B"> CFO<br>
+      <input type="radio" name="q8" value="C"> CTO<br>
+    </div>
+  </div>
+
+  <!-- Question 9 -->
+  <div class="question">
+    <p>9. What is a unique feature of Stable chain?</p>
+    <div class="options">
+      <input type="radio" name="q9" value="A"> USDT as native gas token<br>
+      <input type="radio" name="q9" value="B"> Proof-of-stake NFT rewards<br>
+      <input type="radio" name="q9" value="C"> Social media integration<br>
+    </div>
+  </div>
+
+  <!-- Question 10 -->
+  <div class="question">
+    <p>10. What is one challenge Stable aims to solve?</p>
+    <div class="options">
+      <input type="radio" name="q10" value="A"> Make stablecoins usable for real payments<br>
+      <input type="radio" name="q10" value="B"> Launch a gaming platform<br>
+      <input type="radio" name="q10" value="C"> Replace BTC<br>
+    </div>
+  </div>
+
+  <button onclick="checkAnswers()">Submit</button>
+
+  <p id="result"></p>
+
+  <script>
+    const answers = {
+      q1: "A",
+      q2: "B",
+      q3: "A",
+      q4: "B",
+      q5: "A",
+      q6: "A",
+      q7: "A",
+      q8: "B",
+      q9: "A",
+      q10: "A"
+    };
+
+    function checkAnswers() {
+      let score = 0;
+      for (let q in answers) {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        if (selected && selected.value === answers[q]) {
+          score++;
+        }
+      }
+      document.getElementById('result').innerText = `You scored ${score} out of ${Object.keys(answers).length}.`;
+    }
+  </script>
+</body>
+</html>
